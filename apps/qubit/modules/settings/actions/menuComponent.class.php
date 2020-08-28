@@ -103,17 +103,18 @@ class SettingsMenuComponent extends sfComponent
         'hide' => !$this->context->getConfiguration()->isPluginEnabled(
           'arStorageServicePlugin'
         )
-      )
-    );
-
-    // Only show LDAP authentication settings if LDAP authentication's used
-    if ($this->context->user instanceof ldapUser)
-    {
-      array_push($this->nodes, array(
+      ),
+      array(
+        'label' => $i18n->__('Uploads'),
+        'action' => 'uploads'
+      ),
+      // Only show LDAP authentication settings if LDAP authentication's used
+      array(
         'label' => $i18n->__('LDAP Authentication'),
-        'action' => 'ldap'
-      ));
-    }
+        'action' => 'ldap',
+        'hide' => !($this->context->user instanceof ldapUser)
+      ),
+    );
 
     foreach ($this->nodes as $i => &$node)
     {
