@@ -28,12 +28,7 @@ class RepositoryUploadLimitComponent extends sfComponent
       $this->resource = $this->resource->getRepository(array('inherit' => true));
     }
 
-    if (!isset($this->resource))
-    {
-      return sfView::NONE;
-    }
-
-    if (!$this->getUser()->isAuthenticated())
+    if (!isset($this->resource) || !QubitAcl::check($this->resource, 'update'))
     {
       return sfView::NONE;
     }
