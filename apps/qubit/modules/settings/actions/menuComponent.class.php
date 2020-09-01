@@ -24,12 +24,8 @@ class SettingsMenuComponent extends sfComponent
     $i18n = $this->context->i18n;
     $this->nodes = array(
       array(
-        'label' => $i18n->__('Global'),
-        'action' => 'global'
-      ),
-      array(
-        'label' => $i18n->__('Site information'),
-        'action' => 'siteInformation'
+        'label' => $i18n->__('Clipboard'),
+        'action' => 'clipboard'
       ),
       array(
         'label' => $i18n->__('Default page elements'),
@@ -40,8 +36,20 @@ class SettingsMenuComponent extends sfComponent
         'action' => 'template'
       ),
       array(
-        'label' => $i18n->__('User interface labels'),
-        'action' => 'interfaceLabel'
+        'label' => $i18n->__('Digital object derivatives'),
+        'action' => 'digitalObjectDerivatives'
+      ),
+      array(
+        'label' => $i18n->__('DIP upload'),
+        'action' => 'dipUpload'
+      ),
+      array(
+        'label' => $i18n->__('Finding Aid'),
+        'action' => 'findingAid'
+      ),
+      array(
+        'label' => $i18n->__('Global'),
+        'action' => 'global'
       ),
       array(
         'label' => $i18n->__('I18n languages'),
@@ -52,49 +60,39 @@ class SettingsMenuComponent extends sfComponent
         'action' => 'identifier'
       ),
       array(
-        'label' => $i18n->__('OAI repository'),
-        'action' => 'oai',
-        'hide' => !$this->context->getConfiguration()->isPluginEnabled('arOaiPlugin')
-      ),
-      array(
-        'label' => $i18n->__('Finding Aid'),
-        'action' => 'findingAid'
-      ),
-      array(
-        'label' => $i18n->__('Security'),
-        'action' => 'security'
-      ),
-      array(
-        'label' => $i18n->__('Permissions'),
-        'action' => 'permissions'
-      ),
-      array(
         'label' => $i18n->__('Inventory'),
         'action' => 'inventory'
       ),
+      // Only show LDAP authentication settings if LDAP authentication's used
       array(
-        'label' => $i18n->__('Digital object derivatives'),
-        'action' => 'digitalObjectDerivatives'
-      ),
-      array(
-        'label' => $i18n->__('DIP upload'),
-        'action' => 'dipUpload'
-      ),
-      array(
-        'label' => $i18n->__('Treeview'),
-        'action' => 'treeview'
+        'label' => $i18n->__('LDAP Authentication'),
+        'action' => 'ldap',
+        'hide' => !($this->context->user instanceof ldapUser)
       ),
       array(
         'label' => $i18n->__('Markdown'),
         'action' => 'markdown'
       ),
       array(
+        'label' => $i18n->__('OAI repository'),
+        'action' => 'oai',
+        'hide' => !$this->context->getConfiguration()->isPluginEnabled('arOaiPlugin')
+      ),
+      array(
+        'label' => $i18n->__('Permissions'),
+        'action' => 'permissions'
+      ),
+      array(
         'label' => $i18n->__('Privacy Notification'),
         'action' => 'privacyNotification'
       ),
       array(
-        'label' => $i18n->__('Clipboard'),
-        'action' => 'clipboard'
+        'label' => $i18n->__('Security'),
+        'action' => 'security'
+      ),
+      array(
+        'label' => $i18n->__('Site information'),
+        'action' => 'siteInformation'
       ),
       array(
         'label' => $i18n->__('Storage service'),
@@ -105,14 +103,16 @@ class SettingsMenuComponent extends sfComponent
         )
       ),
       array(
+        'label' => $i18n->__('Treeview'),
+        'action' => 'treeview'
+      ),
+      array(
         'label' => $i18n->__('Uploads'),
         'action' => 'uploads'
       ),
-      // Only show LDAP authentication settings if LDAP authentication's used
       array(
-        'label' => $i18n->__('LDAP Authentication'),
-        'action' => 'ldap',
-        'hide' => !($this->context->user instanceof ldapUser)
+        'label' => $i18n->__('User interface labels'),
+        'action' => 'interfaceLabel'
       ),
     );
 
