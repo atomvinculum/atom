@@ -21,6 +21,7 @@ class SettingsUploadsAction extends SettingsEditAction
 {
   // Arrays not allowed in class constants
   public static $NAMES = [
+    'enable_repository_quotas',
     'explode_multipage_files',
     'repository_quota',
     'upload_quota',
@@ -33,6 +34,7 @@ class SettingsUploadsAction extends SettingsEditAction
     $this->updateMessage = $this->i18n->__('Uploads settings saved.');
 
     $this->settingDefaults = [
+      'enable_repository_quotas' => 1,
       'explode_multipage_files' => 0,
       'repository_quota' => 0,
       'upload_quota' => -1,
@@ -51,6 +53,19 @@ class SettingsUploadsAction extends SettingsEditAction
     // Set form field format
     switch ($name)
     {
+      case 'enable_repository_quotas':
+        $this->form->setValidator($name, new sfValidatorBoolean(
+          ['required' => true]
+        ));
+        $this->form->setWidget($name, new sfWidgetFormSelectRadio(
+          ['choices' => [
+            0 => $this->i18n->__('Disabled'), 1 => $this->i18n->__('Enabled')
+          ]],
+          ['class' => 'radio']
+        ));
+
+        break;
+
       case 'explode_multipage_files':
         $this->form->setValidator($name, new sfValidatorBoolean(
           ['required' => true]

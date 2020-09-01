@@ -31,6 +31,33 @@
         <tbody>
 
           <?php echo $form
+            ->upload_quota
+            ->label(__('Total space available for uploads'))
+            ->renderRow()
+          ?>
+
+          <?php echo $form
+            ->enable_repository_quotas
+            ->label(
+                __('%1% upload limits',
+                [
+                  '%1%' => sfConfig::get('app_ui_label_repository')
+                ]
+              ))
+              ->help(__(
+                'When enabled, an &quot;Upload limit&quot; meter is displayed'
+                . ' for authenticated users on the %1% view page, and'
+                . ' administrators can limit the disk space each %1% is allowed'
+                . ' for %2% uploads',
+                [
+                  '%1%' => strtolower(sfConfig::get('app_ui_label_repository')),
+                  '%2%' => strtolower(sfConfig::get('app_ui_label_digitalobject')),
+                ]
+              ))
+            ->renderRow()
+          ?>
+
+          <?php echo $form
             ->repository_quota
             ->label(__(
               'Default %1% upload limit (GB)',
@@ -45,12 +72,6 @@
                   '%2%' => strtolower(sfConfig::get('app_ui_label_repository'))
                 ]
               ))
-            ->renderRow()
-          ?>
-
-          <?php echo $form
-            ->upload_quota
-            ->label(__('Total space available for uploads'))
             ->renderRow()
           ?>
 
