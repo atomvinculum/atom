@@ -84,7 +84,7 @@ class sfIsadPluginIndexAction extends InformationObjectIndexAction
 
       $validatorSchema->extentAndMedium = new sfValidatorString(array(
         'required' => true), array(
-        'required' => $this->context->i18n->__('%1%Extent and medium%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.5">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>'))));
+        'required' => $this->context->i18n->__('%1%Archival reference%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.5">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>'))));
       $values['extentAndMedium'] = $this->resource->getExtentAndMedium(array('cultureFallback' => true));
 
       $validatorSchema->identifier = new sfValidatorString(array(

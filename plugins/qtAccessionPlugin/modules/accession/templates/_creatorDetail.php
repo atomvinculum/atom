@@ -1,6 +1,6 @@
 <?php foreach ($resource->getCreators() as $item): ?>
   <div class="field">
-    <h3><?php echo __('Name of creator') ?></h3>
+    <h3><?php echo 'Creator/ accumulator'; ?></h3>
     <div>
 
       <?php echo link_to(render_title($item), array($item)) ?>

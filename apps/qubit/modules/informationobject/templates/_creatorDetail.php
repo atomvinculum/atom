@@ -2,7 +2,7 @@
 <?php foreach ($ancestor->getCreators() as $item): ?>
   <?php if (!isset($actorsShown[$item->id])): ?>
     <div class="field">
-      <h3><?php echo __('Name of creator') ?></h3>
+      <h3><?php echo 'Creator/ accumulator'; ?></h3>
       <div>
 
         <div class="creator">

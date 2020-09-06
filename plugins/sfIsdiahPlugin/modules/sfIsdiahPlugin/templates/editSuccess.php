@@ -141,7 +141,7 @@
 
         <?php echo render_field($form->descIdentifier
           ->help(__('"Record a unique description identifier in accordance with local and/or national conventions. If the description is to be used internationally, record the code of the country in which the description was created in accordance with the latest version of ISO 3166 - Codes for the representation of names of countries. Where the creator of the description is an international organisation, give the organisational identifier in place of the country code." (ISIAH 5.6.1)'))
-          ->label(__('Description identifier')), $resource) ?>
+          ->label('Digital identifier'), $resource) ?>
 
         <?php echo render_field($form->descInstitutionIdentifier
           ->help(__('"Record the full authorised form of name(s) of the agency(ies) responsible for creating, modifying or disseminating the description or, alternatively, record a code for the agency in accordance with the national or international agency code standard." (ISDIAH 5.6.2)'))

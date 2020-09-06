@@ -72,7 +72,7 @@
 
         <div class="form-item">
           <?php echo $form->creators
-            ->label(__('Name of creator(s)').' <span class="form-required" title="'.__('This archival description, or one of its higher levels, requires at least one creator.').'">*</span>')
+            ->label('Creator/ accumulator <span class="form-required" title="'.__('This archival description, or one of its higher levels, requires at least one creator.').'">*</span>')
             ->renderLabel() ?>
           <?php echo $form->creators->render(array('class' => 'form-autocomplete')) ?>
           <?php echo $form->creators

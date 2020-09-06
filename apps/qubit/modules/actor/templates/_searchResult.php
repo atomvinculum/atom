@@ -23,7 +23,7 @@
   <?php endif; ?>
 
   <div class="search-result-description">
-
+  
     <p class="title"><?php echo link_to(render_value_inline(get_search_i18n($doc, 'authorizedFormOfName', array('allowEmpty' => false, 'culture' => $culture))), array('module' => 'actor', 'slug' => $doc['slug'])) ?></p>
 
     <?php echo get_component('object', 'clipboardButton', array('slug' => $doc['slug'], 'wide' => false)) ?>
@@ -41,6 +41,42 @@
       <?php if (strlen($dates = get_search_i18n($doc, 'datesOfExistence', array('culture' => $culture))) > 0): ?>
         <li><?php echo render_value_inline($dates) ?></li>
       <?php endif; ?>
+      <li>
+        <?php
+        // print_r($doc);
+        //print_r($aggs['repository']);
+        // print_r($aggs);
+
+        $criteria = new Criteria();
+        $criteria->addJoin(QubitActor::ID, QubitActorI18n::ID);
+        $criteria->add(QubitActorI18n::AUTHORIZED_FORM_OF_NAME, $doc['i18n']['en']['authorizedFormOfName']);
+
+        $criteria->addJoin(QubitActor::ID, QubitRelation::OBJECT_ID);
+        $criteria->add(QubitRelation::TYPE_ID, QubitTerm::MAINTAINING_REPOSITORY_RELATION_ID);
+        $criteria->add(QubitRelation::SUBJECT_ID, $doc['maintainingRepositoryId']);
+
+        $r = QubitActor::getOne($criteria, []);
+        if ($r !== null) {
+          $repository = $r->getMaintainingRepository();
+          echo render_title($repository);
+        }
+
+
+/*          $present = false;
+
+          foreach ($aggs['repository'] as $agg) {
+            if($agg['key'] == $doc['maintainingRepositoryId']) {
+              $present = true;
+              echo $agg['display'];
+            }
+          } */
+
+/*          if (!$present) {
+            echo $doc['i18n']['en']['authorizedFormOfName'];
+          }*/
+        ?>
+      </li>
+
 
     </ul>
 

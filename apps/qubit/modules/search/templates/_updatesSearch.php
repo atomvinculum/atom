@@ -39,7 +39,7 @@
           <?php if (sfConfig::get('app_multi_repository')): ?>
             <div class="filter-left">
               <?php echo $form->repository
-                ->label(__('Repository'))
+                ->label('Entail/ Vínculo')
                 ->renderRow() ?>
             </div>
             <div class="filter-right">

@@ -2,7 +2,7 @@
   <?php if ($treeviewType == 'sidebar'): ?>
     <li class="active">
       <a href="#treeview" data-toggle="#treeview">
-        <?php echo __('Holdings') ?>
+        <?php echo 'Documents'; ?>
       </a>
     </li>
   <?php endif; ?>

@@ -368,7 +368,7 @@
 
         <?php echo $form->descriptionIdentifier
           ->help(__('Record a unique description identifier in accordance with local and/or national conventions. If the description is to be used internationally, record the code of the country in which the description was created in accordance with the latest version of ISO 3166 - Codes for the representation of names of countries. Where the creator of the description is an international organisation, give the organisational identifier in place of the country code.'))
-          ->label(__('Description identifier'))
+          ->label('Digital identifier')
           ->renderRow() ?>
 
         <?php echo render_field($form->institutionResponsibleIdentifier

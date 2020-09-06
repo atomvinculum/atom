@@ -44,7 +44,7 @@ class RepositoryMaintainedActorsComponent extends sfComponent
     $pager->init();
 
     $this->list = array(
-      'label' => $this->context->i18n->__('Maintainer of'),
+      'label' => 'Related people and institutions',
       'pager' => $pager,
       'dataUrl' => url_for(array('module' => 'repository', 'action' => 'maintainedActors', 'repositoryId' => $this->resource->id)),
       'moreUrl' => url_for(array('module' => 'actor', 'action' => 'browse', 'maintainingRepository' => $this->resource->id)));

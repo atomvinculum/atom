@@ -142,7 +142,7 @@
 
   <?php echo link_to_if(QubitAcl::check($resource, 'update'), '<h2>'.__('Control area').'</h2>', array($resource, 'module' => 'function', 'action' => 'edit'), array('anchor' => 'controlArea', 'title' => __('Edit control area'))) ?>
 
-  <?php echo render_show(__('Description identifier'), render_value($resource->descriptionIdentifier)) ?>
+  <?php echo render_show('Digital identifier', render_value($resource->descriptionIdentifier)); //echo render_show(__('Description identifier'), render_value($resource->descriptionIdentifier)) ?>
 
   <?php echo render_show(__('Institution identifier'), render_value($resource->getInstitutionIdentifier(array('cultureFallback' => true)))) ?>
 

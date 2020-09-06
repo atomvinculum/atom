@@ -80,7 +80,7 @@
 
   <?php echo render_show(__('Level of description'), render_value($resource->levelOfDescription), array('fieldLabel' => 'levelOfDescription')) ?>
 
-  <?php echo render_show(__('Extent and medium'), render_value($resource->getCleanExtentAndMedium(array('cultureFallback' => true))), array('fieldLabel' => 'extentAndMedium')) ?>
+  <?php echo render_show('Archival reference', render_value($resource->getCleanExtentAndMedium(array('cultureFallback' => true))), array('fieldLabel' => 'extentAndMedium')) ?>
 </section> <!-- /section#identityArea -->
 
 <section id="contextArea">
@@ -107,7 +107,7 @@
   </div>
 
   <div class="repository">
-    <?php echo render_show_repository(__('Repository'), $resource) ?>
+    <?php echo render_show_repository('Entail/Vínculo', $resource); ?>
   </div>
 
   <?php if (check_field_visibility('app_element_visibility_isad_archival_history')): ?>
@@ -249,7 +249,7 @@
   <?php endif; ?>
 
   <?php if (check_field_visibility('app_element_visibility_isad_control_description_identifier')): ?>
-    <?php echo render_show(__('Description identifier'), render_value($resource->getDescriptionIdentifier(array('cultureFallback' => true))), array('fieldLabel' => 'descriptionIdentifier')) ?>
+    <?php echo render_show('Digital identifier', render_value($resource->getDescriptionIdentifier(array('cultureFallback' => true))), array('fieldLabel' => 'descriptionIdentifier')) ?>
   <?php endif; ?>
 
   <?php if (check_field_visibility('app_element_visibility_isad_control_institution_identifier')): ?>

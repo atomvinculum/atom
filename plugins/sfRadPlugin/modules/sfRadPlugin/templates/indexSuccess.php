@@ -95,7 +95,7 @@
   <?php echo render_show(__('Level of description'), render_value($resource->levelOfDescription), array('fieldLabel' => 'levelOfDescription')) ?>
 
   <div class="repository">
-    <?php echo render_show_repository(__('Repository'), $resource) ?>
+    <?php echo render_show_repository('Entail/ Vínculo', $resource) ?>
   </div>
 
   <?php echo render_show(__('Reference code'), render_value($rad->__get('referenceCode', array('cultureFallback' => true))), array('fieldLabel' => 'referenceCode')) ?>

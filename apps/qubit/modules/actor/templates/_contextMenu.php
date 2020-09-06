@@ -21,7 +21,7 @@
       <ul>
         <?php foreach ($list['pager']->getResults() as $hit): ?>
           <?php $doc = $hit->getData() ?>
-          <li><?php echo link_to(render_value_inline(get_search_i18n($doc, 'title', array('allowEmpty' => false))), array('module' => 'informationobject', 'slug' => $doc['slug'])) ?></li>
+          <li><?php echo '<span style="float:left;padding:4px;min-width:40px;">' . $doc['identifier'] . '</span>' . link_to(render_value_inline(get_search_i18n($doc, 'title', array('allowEmpty' => false))), array('module' => 'informationobject', 'slug' => $doc['slug'])) ?></li>
         <?php endforeach; ?>
       </ul>
 

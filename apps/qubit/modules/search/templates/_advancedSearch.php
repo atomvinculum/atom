@@ -123,7 +123,7 @@
           <div class="filter-row">
             <div class="filter">
               <?php echo $form->repos
-                ->label(__('Repository'))
+                ->label('Entail/ Vínculo')
                 ->renderRow() ?>
             </div>
           </div>

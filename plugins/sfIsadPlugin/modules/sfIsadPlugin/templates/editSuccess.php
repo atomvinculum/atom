@@ -61,7 +61,7 @@
 
         <?php echo render_field($form->extentAndMedium
           ->help(__('Record the extent of the unit of description by giving the number of physical or logical units in arabic numerals and the unit of measurement. Give the specific medium (media) of the unit of description. Separate multiple extents with a linebreak. (ISAD 3.1.5)'))
-          ->label(__('Extent and medium').' <span class="form-required" title="'.__('This is a mandatory element.').'">*</span>'), $resource, array('class' => 'resizable')) ?>
+          ->label('Archival reference <span class="form-required" title="'.__('This is a mandatory element.').'">*</span>'), $resource, array('class' => 'resizable')) ?>
 
       </fieldset> <!-- /#identityArea -->
 
@@ -71,7 +71,7 @@
 
         <div class="form-item">
           <?php echo $form->creators
-            ->label(__('Name of creator(s)').' <span class="form-required" title="'.__('This archival description, or one of its higher levels, requires at least one creator.').'">*</span>')
+            ->label('Creator/ accumulator <span class="form-required" title="'.__('This archival description, or one of its higher levels, requires at least one creator.').'">*</span>')
             ->renderLabel() ?>
           <?php echo $form->creators->render(array('class' => 'form-autocomplete')) ?>
           <?php echo $form->creators
@@ -82,7 +82,7 @@
         </div>
 
         <div class="form-item">
-          <?php echo $form->repository->renderLabel() ?>
+          <?php echo 'Entail/Vínculo'; ?>
           <?php echo $form->repository->render(array('class' => 'form-autocomplete')) ?>
           <input class="add" type="hidden" data-link-existing="true" value="<?php echo url_for(array('module' => 'repository', 'action' => 'add')) ?> #authorizedFormOfName"/>
           <input class="list" type="hidden" value="<?php echo url_for($sf_data->getRaw('repoAcParams')) ?>"/>
@@ -253,7 +253,7 @@
 
         <?php echo $form->descriptionIdentifier
           ->help(__('Record a unique description identifier in accordance with local and/or national conventions. If the description is to be used internationally, record the code of the country in which the description was created in accordance with the latest version of ISO 3166 - Codes for the representation of names of countries. Where the creator of the description is an international organisation, give the organisational identifier in place of the country code.'))
-          ->label(__('Description identifier'))
+          ->label('Digital identifier')
           ->renderRow() ?>
 
         <?php echo render_field($form->institutionResponsibleIdentifier

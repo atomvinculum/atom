@@ -36,7 +36,7 @@
             <?php echo __('Title') ?>
           </th>
           <th>
-            <?php echo __('Repository') ?>
+            <?php echo 'Entail/ Vínculo'; ?>
           </th>
           <?php if ('CREATED_AT' != $form->getValue('dateOf')): ?>
             <th style="width: 110px"><?php echo __('Updated'); ?></th>
@@ -81,7 +81,7 @@
           <tr>
             <th><?php echo __($nameColumnDisplay); ?></th>
             <?php if ('QubitInformationObject' == $className && 0 < sfConfig::get('app_multi_repository')): ?>
-              <th><?php echo __('Repository') ?></th>
+              <th><?php echo 'Entail/ Vínculo' ?></th>
             <?php elseif ('QubitTerm' == $className): ?>
               <th><?php echo __('Taxonomy'); ?></th>
             <?php endif; ?>

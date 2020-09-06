@@ -149,7 +149,7 @@
 
   <?php echo render_show(__('Buildings'), render_value($resource->getBuildings(array('cultureFallback' => true)))) ?>
 
-  <?php echo render_show(__('Holdings'), render_value($resource->getHoldings(array('cultureFallback' => true)))) ?>
+  <?php echo render_show('Documents', render_value($resource->getHoldings(array('cultureFallback' => true)))) ?>
 
   <?php echo render_show(__('Finding aids, guides and publications'), render_value($resource->getFindingAids(array('cultureFallback' => true)))) ?>
 
@@ -183,7 +183,7 @@
 
   <?php echo link_to_if(SecurityPrivileges::editCredentials($sf_user, 'repository'), '<h2>'.__('Control area').'</h2>', array($resource, 'module' => 'repository', 'action' => 'edit'), array('anchor' => 'controlArea', 'title' => __('Edit control area'))) ?>
 
-  <?php echo render_show(__('Description identifier'), render_value($resource->descIdentifier)) ?>
+  <?php echo render_show('Digital identifier', render_value($resource->descIdentifier)) ?>
 
   <?php echo render_show(__('Institution identifier'), render_value($resource->getDescInstitutionIdentifier(array('cultureFallback' => true)))) ?>
 
